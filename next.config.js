@@ -24,12 +24,10 @@ const moduleExports = {
         __SENTRY_TRACING__: false,
       }),
     );
-    config.module.rules.push(
-      {
-        test: /\.svg$/,
-        use: [ '@svgr/webpack' ],
-      },
-    );
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    });
     config.resolve.fallback = { fs: false, net: false, tls: false };
     config.externals.push('pino-pretty', 'lokijs', 'encoding');
 
