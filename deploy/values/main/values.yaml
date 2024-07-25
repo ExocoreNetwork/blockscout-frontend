@@ -67,7 +67,7 @@ blockscout:
     FETCH_REWARDS_WAY: manual
     MICROSERVICE_SC_VERIFIER_ENABLED: 'true'
     MICROSERVICE_SC_VERIFIER_TYPE: 'sc_verifier'
-    MICROSERVICE_SC_VERIFIER_URL: http://38.91.106.205:8050
+    MICROSERVICE_SC_VERIFIER_URL: http://38.91.106.205:8050/api/v2/verifier/solidity/versions
     INDEXER_MEMORY_LIMIT: 5
     APPS_MENU: 'true'
     APPS: '[{"title": "Marketplace", "url": "/apps", "embedded?": true}]'

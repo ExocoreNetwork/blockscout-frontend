@@ -62,7 +62,7 @@ blockscout:
     MIX_ENV: prod
     MICROSERVICE_SC_VERIFIER_ENABLED: 'true'
     MICROSERVICE_SC_VERIFIER_TYPE: 'sc_verifier'
-    MICROSERVICE_SC_VERIFIER_URL: http://38.91.106.205:8050
+    MICROSERVICE_SC_VERIFIER_URL: http://38.91.106.205:8050/api/v2/verifier/solidity/versions
     DISABLE_EXCHANGE_RATES: 'true'
     APPS_MENU: 'true'
     EXTERNAL_APPS: '[{"title": "Marketplace", "url": "/apps"}]'
