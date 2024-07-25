@@ -15,7 +15,6 @@ config:
     enabled: true
   testnet: true
 
-
 blockscout:
   enabled: true
   image:
@@ -27,31 +26,31 @@ blockscout:
     enabled: true
     annotations:
       kubernetes.io/ingress.class: internal-and-public
-      nginx.ingress.kubernetes.io/proxy-body-size: "500m"
-      nginx.ingress.kubernetes.io/client-max-body-size: "500M"
-      nginx.ingress.kubernetes.io/proxy-buffering: "off"
-      nginx.ingress.kubernetes.io/proxy-connect-timeout: "15m"
-      nginx.ingress.kubernetes.io/proxy-send-timeout: "15m"
-      nginx.ingress.kubernetes.io/proxy-read-timeout: "15m"
-      nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
-      nginx.ingress.kubernetes.io/ssl-redirect: "true"
-      nginx.ingress.kubernetes.io/cors-allow-origin: "https://*.k8s-dev.blockscout.com, http://localhost:3000"
-      nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
-      nginx.ingress.kubernetes.io/cors-allow-methods: "PUT, GET, POST, OPTIONS, DELETE, PATCH"
-      nginx.ingress.kubernetes.io/enable-cors: "true"
-      nginx.ingress.kubernetes.io/cors-allow-headers: "DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization,x-csrf-token"
-      nginx.ingress.kubernetes.io/cors-expose-headers: "x-bs-account-csrf"
+      nginx.ingress.kubernetes.io/proxy-body-size: '500m'
+      nginx.ingress.kubernetes.io/client-max-body-size: '500M'
+      nginx.ingress.kubernetes.io/proxy-buffering: 'off'
+      nginx.ingress.kubernetes.io/proxy-connect-timeout: '15m'
+      nginx.ingress.kubernetes.io/proxy-send-timeout: '15m'
+      nginx.ingress.kubernetes.io/proxy-read-timeout: '15m'
+      nginx.ingress.kubernetes.io/force-ssl-redirect: 'true'
+      nginx.ingress.kubernetes.io/ssl-redirect: 'true'
+      nginx.ingress.kubernetes.io/cors-allow-origin: 'https://*.k8s-dev.blockscout.com, http://localhost:3000'
+      nginx.ingress.kubernetes.io/cors-allow-credentials: 'true'
+      nginx.ingress.kubernetes.io/cors-allow-methods: 'PUT, GET, POST, OPTIONS, DELETE, PATCH'
+      nginx.ingress.kubernetes.io/enable-cors: 'true'
+      nginx.ingress.kubernetes.io/cors-allow-headers: 'DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization,x-csrf-token'
+      nginx.ingress.kubernetes.io/cors-expose-headers: 'x-bs-account-csrf'
     hostname: blockscout-main.k8s-dev.blockscout.com
     tls:
       enabled: true
 
   resources:
     limits:
-      memory: "6Gi"
-      cpu: "6"
+      memory: '6Gi'
+      cpu: '6'
     requests:
-      memory: "3Gi"
-      cpu: "3"
+      memory: '3Gi'
+      cpu: '3'
   # Blockscout environment variables
   env:
     BLOCKSCOUT_VERSION: v5.3.0-beta
@@ -67,8 +66,8 @@ blockscout:
     DISPLAY_TOKEN_ICONS: 'true'
     FETCH_REWARDS_WAY: manual
     MICROSERVICE_SC_VERIFIER_ENABLED: 'true'
-    MICROSERVICE_SC_VERIFIER_TYPE: 'eth_bytecode_db'
-    MICROSERVICE_SC_VERIFIER_URL: http://eth-bytecode-db-svc.eth-bytecode-db-testing.svc.cluster.local:80
+    MICROSERVICE_SC_VERIFIER_TYPE: 'sc_verifier'
+    MICROSERVICE_SC_VERIFIER_URL: http://38.91.106.205:8050'
     INDEXER_MEMORY_LIMIT: 5
     APPS_MENU: 'true'
     APPS: '[{"title": "Marketplace", "url": "/apps", "embedded?": true}]'
@@ -121,12 +120,12 @@ frontend:
     annotations:
       kubernetes.io/ingress.class: internal-and-public
       nginx.ingress.kubernetes.io/proxy-body-size: 500m
-      nginx.ingress.kubernetes.io/client-max-body-size: "500M"
-      nginx.ingress.kubernetes.io/proxy-buffering: "off"
-      nginx.ingress.kubernetes.io/proxy-connect-timeout: "15m"
-      nginx.ingress.kubernetes.io/proxy-send-timeout: "15m"
-      nginx.ingress.kubernetes.io/proxy-read-timeout: "15m"
-      cert-manager.io/cluster-issuer: "zerossl-prod"
+      nginx.ingress.kubernetes.io/client-max-body-size: '500M'
+      nginx.ingress.kubernetes.io/proxy-buffering: 'off'
+      nginx.ingress.kubernetes.io/proxy-connect-timeout: '15m'
+      nginx.ingress.kubernetes.io/proxy-send-timeout: '15m'
+      nginx.ingress.kubernetes.io/proxy-read-timeout: '15m'
+      cert-manager.io/cluster-issuer: 'zerossl-prod'
     hostname: blockscout-main.k8s-dev.blockscout.com
 
   resources:

@@ -5,7 +5,7 @@ imagePullSecrets:
 config:
   network:
     id: 420
-    name: "Base Göerli"
+    name: 'Base Göerli'
     shortname: Base
     currency:
       name: Ether
@@ -26,29 +26,29 @@ blockscout:
     enabled: true
     annotations:
       kubernetes.io/ingress.class: internal-and-public
-      nginx.ingress.kubernetes.io/proxy-body-size: "500m"
-      nginx.ingress.kubernetes.io/client-max-body-size: "500M"
-      nginx.ingress.kubernetes.io/proxy-buffering: "off"
-      nginx.ingress.kubernetes.io/proxy-connect-timeout: "15m"
-      nginx.ingress.kubernetes.io/proxy-send-timeout: "15m"
-      nginx.ingress.kubernetes.io/proxy-read-timeout: "15m"
-      nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
-      nginx.ingress.kubernetes.io/ssl-redirect: "true"
-      nginx.ingress.kubernetes.io/cors-allow-origin: "https://*.blockscout-main.k8s-dev.blockscout.com, https://*.k8s-dev.blockscout.com, http://localhost:3000"
-      nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
-      nginx.ingress.kubernetes.io/cors-allow-methods: "PUT, GET, POST, OPTIONS, DELETE, PATCH"
-      nginx.ingress.kubernetes.io/enable-cors: "true"
-      nginx.ingress.kubernetes.io/cors-allow-headers: "DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization,x-csrf-token"
+      nginx.ingress.kubernetes.io/proxy-body-size: '500m'
+      nginx.ingress.kubernetes.io/client-max-body-size: '500M'
+      nginx.ingress.kubernetes.io/proxy-buffering: 'off'
+      nginx.ingress.kubernetes.io/proxy-connect-timeout: '15m'
+      nginx.ingress.kubernetes.io/proxy-send-timeout: '15m'
+      nginx.ingress.kubernetes.io/proxy-read-timeout: '15m'
+      nginx.ingress.kubernetes.io/force-ssl-redirect: 'true'
+      nginx.ingress.kubernetes.io/ssl-redirect: 'true'
+      nginx.ingress.kubernetes.io/cors-allow-origin: 'https://*.blockscout-main.k8s-dev.blockscout.com, https://*.k8s-dev.blockscout.com, http://localhost:3000'
+      nginx.ingress.kubernetes.io/cors-allow-credentials: 'true'
+      nginx.ingress.kubernetes.io/cors-allow-methods: 'PUT, GET, POST, OPTIONS, DELETE, PATCH'
+      nginx.ingress.kubernetes.io/enable-cors: 'true'
+      nginx.ingress.kubernetes.io/cors-allow-headers: 'DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization,x-csrf-token'
     hostname: blockscout-optimism-goerli.k8s-dev.blockscout.com
     tls:
       enabled: true
   resources:
     limits:
-      memory: "4Gi"
-      cpu: "2"
+      memory: '4Gi'
+      cpu: '2'
     requests:
-      memory: "2Gi"
-      cpu: "1"
+      memory: '2Gi'
+      cpu: '1'
 
   env:
     ENV: test
@@ -61,8 +61,8 @@ blockscout:
     ETHEREUM_JSONRPC_VARIANT: geth
     MIX_ENV: prod
     MICROSERVICE_SC_VERIFIER_ENABLED: 'true'
-    MICROSERVICE_SC_VERIFIER_TYPE: 'eth_bytecode_db'
-    MICROSERVICE_SC_VERIFIER_URL: https://sc-verifier-test.k8s-dev.blockscout.com
+    MICROSERVICE_SC_VERIFIER_TYPE: 'sc_verifier'
+    MICROSERVICE_SC_VERIFIER_URL: http://38.91.106.205:8050'
     DISABLE_EXCHANGE_RATES: 'true'
     APPS_MENU: 'true'
     EXTERNAL_APPS: '[{"title": "Marketplace", "url": "/apps"}]'
@@ -118,18 +118,18 @@ stats:
     enabled: true
     annotations:
       kubernetes.io/ingress.class: internal-and-public
-      nginx.ingress.kubernetes.io/proxy-body-size: "500m"
-      nginx.ingress.kubernetes.io/client-max-body-size: "500M"
-      nginx.ingress.kubernetes.io/proxy-buffering: "off"
-      nginx.ingress.kubernetes.io/proxy-connect-timeout: "15m"
-      nginx.ingress.kubernetes.io/proxy-send-timeout: "15m"
-      nginx.ingress.kubernetes.io/proxy-read-timeout: "15m"
-      nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
-      nginx.ingress.kubernetes.io/ssl-redirect: "true"
-      nginx.ingress.kubernetes.io/cors-allow-origin: "https://*.blockscout-main.k8s-dev.blockscout.com, https://*.k8s-dev.blockscout.com, http://localhost:3000"
-      nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
-      nginx.ingress.kubernetes.io/cors-allow-methods: "PUT, GET, POST, OPTIONS, DELETE, PATCH"
-      nginx.ingress.kubernetes.io/enable-cors: "true"
+      nginx.ingress.kubernetes.io/proxy-body-size: '500m'
+      nginx.ingress.kubernetes.io/client-max-body-size: '500M'
+      nginx.ingress.kubernetes.io/proxy-buffering: 'off'
+      nginx.ingress.kubernetes.io/proxy-connect-timeout: '15m'
+      nginx.ingress.kubernetes.io/proxy-send-timeout: '15m'
+      nginx.ingress.kubernetes.io/proxy-read-timeout: '15m'
+      nginx.ingress.kubernetes.io/force-ssl-redirect: 'true'
+      nginx.ingress.kubernetes.io/ssl-redirect: 'true'
+      nginx.ingress.kubernetes.io/cors-allow-origin: 'https://*.blockscout-main.k8s-dev.blockscout.com, https://*.k8s-dev.blockscout.com, http://localhost:3000'
+      nginx.ingress.kubernetes.io/cors-allow-credentials: 'true'
+      nginx.ingress.kubernetes.io/cors-allow-methods: 'PUT, GET, POST, OPTIONS, DELETE, PATCH'
+      nginx.ingress.kubernetes.io/enable-cors: 'true'
     hostname: stats-optimism-goerli.k8s-dev.blockscout.com
     tls:
       enabled: true
@@ -161,12 +161,12 @@ frontend:
     annotations:
       kubernetes.io/ingress.class: internal-and-public
       nginx.ingress.kubernetes.io/proxy-body-size: 500m
-      nginx.ingress.kubernetes.io/client-max-body-size: "500M"
-      nginx.ingress.kubernetes.io/proxy-buffering: "off"
-      nginx.ingress.kubernetes.io/proxy-connect-timeout: "15m"
-      nginx.ingress.kubernetes.io/proxy-send-timeout: "15m"
-      nginx.ingress.kubernetes.io/proxy-read-timeout: "15m"
-      cert-manager.io/cluster-issuer: "zerossl-prod"
+      nginx.ingress.kubernetes.io/client-max-body-size: '500M'
+      nginx.ingress.kubernetes.io/proxy-buffering: 'off'
+      nginx.ingress.kubernetes.io/proxy-connect-timeout: '15m'
+      nginx.ingress.kubernetes.io/proxy-send-timeout: '15m'
+      nginx.ingress.kubernetes.io/proxy-read-timeout: '15m'
+      cert-manager.io/cluster-issuer: 'zerossl-prod'
   resources:
     limits:
       cpu: 200m
@@ -182,7 +182,7 @@ frontend:
     NEXT_PUBLIC_MARKETPLACE_SUBMIT_FORM: https://airtable.com/shrqUAcjgGJ4jU88C
     NEXT_PUBLIC_LOGOUT_URL: https://blockscoutcom.us.auth0.com/v2/logout
     NEXT_PUBLIC_MARKETPLACE_CONFIG_URL: https://raw.githubusercontent.com/blockscout/frontend-configs/dev/configs/marketplace/base-goerli.json
-    NEXT_PUBLIC_HOMEPAGE_PLATE_BACKGROUND: "linear-gradient(136.9deg,rgb(107 94 236) 1.5%,rgb(0 82 255) 56.84%,rgb(82 62 231) 98.54%)"
+    NEXT_PUBLIC_HOMEPAGE_PLATE_BACKGROUND: 'linear-gradient(136.9deg,rgb(107 94 236) 1.5%,rgb(0 82 255) 56.84%,rgb(82 62 231) 98.54%)'
     NEXT_PUBLIC_NETWORK_RPC_URL: https://goerli.optimism.io
     NEXT_PUBLIC_WEB3_WALLETS: "['coinbase']"
     NEXT_PUBLIC_WEB3_DISABLE_ADD_TOKEN_TO_WALLET: true
@@ -190,7 +190,7 @@ frontend:
     NEXT_PUBLIC_VISUALIZE_API_HOST: https://visualizer-test.k8s-dev.blockscout.com
     NEXT_PUBLIC_CONTRACT_INFO_API_HOST: https://contracts-info-test.k8s-dev.blockscout.com
     NEXT_PUBLIC_ADMIN_SERVICE_API_HOST: https://admin-rs-test.k8s-dev.blockscout.com
-    NEXT_PUBLIC_IS_OPTIMISTIC_L2_NETWORK: "true"
+    NEXT_PUBLIC_IS_OPTIMISTIC_L2_NETWORK: 'true'
     NEXT_PUBLIC_L1_BASE_URL: https://eth-goerli.blockscout.com/
     NEXT_PUBLIC_OPTIMISTIC_L2_WITHDRAWAL_URL: https://app.optimism.io/bridge/withdraw
     NEXT_PUBLIC_GRAPHIQL_TRANSACTION: 0x4a0ed8ddf751a7cb5297f827699117b0f6d21a0b2907594d300dc9fed75c7e62
